@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let api = APIController(baseURL: URL(string: "http://www.poznan.pl")!)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        api.execute(StationsQuery(), success: { (output) in
+            print(output)
+        }) { (failure) in
+            print(failure)
+        }
     }
 
     override func didReceiveMemoryWarning() {

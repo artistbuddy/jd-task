@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9334A6C20EF993B007B6AB7 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A6B20EF993B007B6AB7 /* APIController.swift */; };
+		C9334A6E20EF9C11007B6AB7 /* APIQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A6D20EF9C11007B6AB7 /* APIQuery.swift */; };
+		C9334A7020EF9EE4007B6AB7 /* APICallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A6F20EF9EE4007B6AB7 /* APICallback.swift */; };
+		C9334A7220EFA1E6007B6AB7 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A7120EFA1E6007B6AB7 /* Queries.swift */; };
+		C9334A8320EFCC43007B6AB7 /* Queries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A7120EFA1E6007B6AB7 /* Queries.swift */; };
+		C9334A8420EFCE53007B6AB7 /* APIQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9334A6D20EF9C11007B6AB7 /* APIQuery.swift */; };
 		C9776B8C20EF8ADC00FDD351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9776B8B20EF8ADC00FDD351 /* AppDelegate.swift */; };
 		C9776B8E20EF8ADC00FDD351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9776B8D20EF8ADC00FDD351 /* ViewController.swift */; };
 		C9776B9120EF8ADC00FDD351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9776B8F20EF8ADC00FDD351 /* Main.storyboard */; };
@@ -14,7 +20,23 @@
 		C9776B9620EF8ADD00FDD351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9776B9420EF8ADD00FDD351 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C9334A7C20EFC77D007B6AB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9776B8020EF8ADC00FDD351 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9776B8720EF8ADC00FDD351;
+			remoteInfo = "jd-task";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		C9334A6B20EF993B007B6AB7 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		C9334A6D20EF9C11007B6AB7 /* APIQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIQuery.swift; sourceTree = "<group>"; };
+		C9334A6F20EF9EE4007B6AB7 /* APICallback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICallback.swift; sourceTree = "<group>"; };
+		C9334A7120EFA1E6007B6AB7 /* Queries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queries.swift; sourceTree = "<group>"; };
+		C9334A7720EFC77D007B6AB7 /* jd-taskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "jd-taskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9334A7B20EFC77D007B6AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9776B8820EF8ADC00FDD351 /* jd-task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jd-task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9776B8B20EF8ADC00FDD351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9776B8D20EF8ADC00FDD351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +47,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C9334A7420EFC77D007B6AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9776B8520EF8ADC00FDD351 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -35,10 +64,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9334A7820EFC77D007B6AB7 /* jd-taskTests */ = {
+			isa = PBXGroup;
+			children = (
+				C9334A7B20EFC77D007B6AB7 /* Info.plist */,
+			);
+			path = "jd-taskTests";
+			sourceTree = "<group>";
+		};
+		C9398B1320EF94990072700E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C9334A6B20EF993B007B6AB7 /* APIController.swift */,
+				C9334A6D20EF9C11007B6AB7 /* APIQuery.swift */,
+				C9334A6F20EF9EE4007B6AB7 /* APICallback.swift */,
+				C9334A7120EFA1E6007B6AB7 /* Queries.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		C9776B7F20EF8ADC00FDD351 = {
 			isa = PBXGroup;
 			children = (
 				C9776B8A20EF8ADC00FDD351 /* jd-task */,
+				C9334A7820EFC77D007B6AB7 /* jd-taskTests */,
 				C9776B8920EF8ADC00FDD351 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C9776B8820EF8ADC00FDD351 /* jd-task.app */,
+				C9334A7720EFC77D007B6AB7 /* jd-taskTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C9776B8B20EF8ADC00FDD351 /* AppDelegate.swift */,
+				C9398B1320EF94990072700E /* API */,
 				C9776B8D20EF8ADC00FDD351 /* ViewController.swift */,
 				C9776B8F20EF8ADC00FDD351 /* Main.storyboard */,
 				C9776B9220EF8ADD00FDD351 /* Assets.xcassets */,
@@ -67,6 +118,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C9334A7620EFC77D007B6AB7 /* jd-taskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9334A7E20EFC77D007B6AB7 /* Build configuration list for PBXNativeTarget "jd-taskTests" */;
+			buildPhases = (
+				C9334A7320EFC77D007B6AB7 /* Sources */,
+				C9334A7420EFC77D007B6AB7 /* Frameworks */,
+				C9334A7520EFC77D007B6AB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9334A7D20EFC77D007B6AB7 /* PBXTargetDependency */,
+			);
+			name = "jd-taskTests";
+			productName = "jd-taskTests";
+			productReference = C9334A7720EFC77D007B6AB7 /* jd-taskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C9776B8720EF8ADC00FDD351 /* jd-task */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9776B9A20EF8ADE00FDD351 /* Build configuration list for PBXNativeTarget "jd-task" */;
@@ -94,6 +163,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Karol;
 				TargetAttributes = {
+					C9334A7620EFC77D007B6AB7 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = C9776B8720EF8ADC00FDD351;
+					};
 					C9776B8720EF8ADC00FDD351 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -113,11 +186,19 @@
 			projectRoot = "";
 			targets = (
 				C9776B8720EF8ADC00FDD351 /* jd-task */,
+				C9334A7620EFC77D007B6AB7 /* jd-taskTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C9334A7520EFC77D007B6AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9776B8620EF8ADC00FDD351 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -131,16 +212,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C9334A7320EFC77D007B6AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9334A8420EFCE53007B6AB7 /* APIQuery.swift in Sources */,
+				C9334A8320EFCC43007B6AB7 /* Queries.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9776B8420EF8ADC00FDD351 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C9776B8E20EF8ADC00FDD351 /* ViewController.swift in Sources */,
+				C9334A6E20EF9C11007B6AB7 /* APIQuery.swift in Sources */,
+				C9334A7220EFA1E6007B6AB7 /* Queries.swift in Sources */,
 				C9776B8C20EF8ADC00FDD351 /* AppDelegate.swift in Sources */,
+				C9334A7020EF9EE4007B6AB7 /* APICallback.swift in Sources */,
+				C9334A6C20EF993B007B6AB7 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9334A7D20EFC77D007B6AB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9776B8720EF8ADC00FDD351 /* jd-task */;
+			targetProxy = C9334A7C20EFC77D007B6AB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C9776B8F20EF8ADC00FDD351 /* Main.storyboard */ = {
@@ -162,6 +264,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C9334A7F20EFC77D007B6AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "jd-taskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kb.jd-taskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jd-task.app/jd-task";
+			};
+			name = Debug;
+		};
+		C9334A8020EFC77D007B6AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "jd-taskTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "kb.jd-taskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/jd-task.app/jd-task";
+			};
+			name = Release;
+		};
 		C9776B9820EF8ADE00FDD351 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +453,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C9334A7E20EFC77D007B6AB7 /* Build configuration list for PBXNativeTarget "jd-taskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9334A7F20EFC77D007B6AB7 /* Debug */,
+				C9334A8020EFC77D007B6AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C9776B8320EF8ADC00FDD351 /* Build configuration list for PBXProject "jd-task" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
