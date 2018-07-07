@@ -28,9 +28,15 @@ class AppCoordinator {
     }
     
     func start() {
-        let red = UIViewController()
-        red.view.backgroundColor = UIColor.red
+        showAllStations()
+    }
+    
+    private func showAllStations() {
+        let p = StationsDataProvider(apiControler: Session.api)
+        let c = StationsCollectionController(dataSource: p)
+        let vm  = StationsViewModel(controller: c, dataProvider: p)
+        let vc = StationsViewController(viewModel: vm)
         
-        self.navigationController.setViewControllers([red], animated: false)
+        self.navigationController.setViewControllers([vc], animated: false)        
     }
 }
