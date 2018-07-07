@@ -18,8 +18,8 @@ class StationsCollectionController: NSObject {
     
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        
-        layout.itemSize = CGSize(width: 300, height: 200)
+        layout.minimumLineSpacing = 20
+        layout.minimumInteritemSpacing = 20
         
         return layout
     }()
@@ -27,7 +27,8 @@ class StationsCollectionController: NSObject {
     private(set) lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: self.flowLayout)
         
-        collection.backgroundColor = UIColor.yellow
+        collection.backgroundColor = UIColor(red: 246/255, green: 246/255, blue: 246/255, alpha: 1.0)
+        collection.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
 
         collection.register(UINib(nibName: String(describing: StationCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: StationCollectionViewCell.cellReusableID)
         
@@ -56,9 +57,8 @@ extension StationsCollectionController: UICollectionViewDataSource {
         
         cell.id = station.id
         cell.name = station.name
-        cell.distance = "0"
-        cell.unit = "m"
-        cell.address = ""
+        cell.distance = "?"
+        cell.address = "?"
         cell.bikes = station.bikes
         cell.freeRacks = station.freeRacks
         
@@ -67,9 +67,13 @@ extension StationsCollectionController: UICollectionViewDataSource {
         
 }
 
-extension StationsCollectionController: UICollectionViewDelegate {
+extension StationsCollectionController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.delegate?.didSelectStation(self.dataSource.getStation(atIndex: indexPath.row))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.size.width - 40, height: CGFloat(225))
     }
 }
 

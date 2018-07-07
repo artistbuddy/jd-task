@@ -28,6 +28,13 @@ protocol StationsDataSource {
 
 class StationsDataProvider {
     private var data: StationsData?
+    private var stations: [StationInfo] {
+        guard let stations = self.data?.stations else {
+            return []
+        }
+        
+        return stations
+    }
     private let api: APIController
     
     init(apiControler: APIController) {
@@ -46,19 +53,15 @@ class StationsDataProvider {
 
 extension StationsDataProvider: StationsDataSource {
     var numberOfStations: Int {
-        return self.data?.stations.count ?? 0
+        return stations.count
     }
     
     func getAllStations() -> [StationInfo] {
-        return self.data?.stations ?? []
+        return stations
     }
     
     func getStation(atIndex index: Int) -> StationInfo {
-        guard let station = self.data?.stations[index] else {
-            fatalError("Stations not found index")
-        }
-        
-        return station
+        return stations[index]
     }
     
 }

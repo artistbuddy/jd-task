@@ -17,6 +17,15 @@ class AppCoordinator {
     private lazy var navigationController: UINavigationController = {
         let controller = UINavigationController()
         
+        controller.isNavigationBarHidden = false
+        controller.navigationBar.isTranslucent = false
+        controller.navigationBar.tintColor = UIColor.white
+        controller.navigationBar.barTintColor = UIColor.black
+    
+        controller.navigationBar.backIndicatorImage = UIImage(named: "arrow")
+        controller.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "arrow")
+        controller.navigationBar.backItem?.title = "" //it doesn't work
+
         return controller
     }()
     
@@ -37,6 +46,6 @@ class AppCoordinator {
         let vm  = StationsViewModel(controller: c, dataProvider: p)
         let vc = StationsViewController(viewModel: vm)
         
-        self.navigationController.setViewControllers([vc], animated: false)        
+        self.navigationController.setViewControllers([vc], animated: false)
     }
 }

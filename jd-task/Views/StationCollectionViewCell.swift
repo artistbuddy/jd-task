@@ -14,7 +14,6 @@ class StationCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var idLabel: UILabel!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var distanceLabel: UILabel!
-    @IBOutlet private weak var unitLabel: UILabel!
     @IBOutlet private weak var adressLabel: UILabel!
     @IBOutlet private weak var bikesCountLabel: UILabel!
     @IBOutlet private weak var racksCountLabel: UILabel!
@@ -34,12 +33,6 @@ class StationCollectionViewCell: UICollectionViewCell {
     var distance: String = "" {
         didSet {
             distanceLabel.text = distance
-        }
-    }
-    
-    var unit: String = "" {
-        didSet {
-            unitLabel.text = unit
         }
     }
     
