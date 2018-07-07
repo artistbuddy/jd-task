@@ -19,6 +19,8 @@ class StationsCollectionController: NSObject {
     private lazy var flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         
+        layout.itemSize = CGSize(width: 300, height: 200)
+        
         return layout
     }()
     
@@ -46,14 +48,19 @@ extension StationsCollectionController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        //TODO: Implement Stations cell
-        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StationCollectionViewCell.cellReusableID, for: indexPath) as? StationCollectionViewCell else {
             fatalError("Could't deque cell: \(StationCollectionViewCell.cellReusableID)")
         }
         
-        print(self.dataSource.getStation(atIndex: indexPath.row).name)
+        let station = self.dataSource.getStation(atIndex: indexPath.row)
+        
+        cell.id = station.id
+        cell.name = station.name
+        cell.distance = "0"
+        cell.unit = "m"
+        cell.address = ""
+        cell.bikes = station.bikes
+        cell.freeRacks = station.freeRacks
         
         return cell
     }
