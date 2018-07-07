@@ -20,6 +20,8 @@
 		C9776B9620EF8ADD00FDD351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9776B9420EF8ADD00FDD351 /* LaunchScreen.storyboard */; };
 		C9A299DE20F0B82100F9B564 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A299DD20F0B82100F9B564 /* AppCoordinator.swift */; };
 		C9A299DF20F0B82100F9B564 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A299DD20F0B82100F9B564 /* AppCoordinator.swift */; };
+		C9A299ED20F0D32E00F9B564 /* StationsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A299EC20F0D32E00F9B564 /* StationsDataProvider.swift */; };
+		C9A299EE20F0D32E00F9B564 /* StationsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A299EC20F0D32E00F9B564 /* StationsDataProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 		C9776B9520EF8ADD00FDD351 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9776B9720EF8ADE00FDD351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9A299DD20F0B82100F9B564 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		C9A299EC20F0D32E00F9B564 /* StationsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsDataProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 			children = (
 				C9776B8B20EF8ADC00FDD351 /* AppDelegate.swift */,
 				C9A299DD20F0B82100F9B564 /* AppCoordinator.swift */,
+				C9A299EC20F0D32E00F9B564 /* StationsDataProvider.swift */,
 				C9398B1320EF94990072700E /* API */,
 				C9776B8D20EF8ADC00FDD351 /* ViewController.swift */,
 				C9776B8F20EF8ADC00FDD351 /* Main.storyboard */,
@@ -221,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9A299DF20F0B82100F9B564 /* AppCoordinator.swift in Sources */,
+				C9A299EE20F0D32E00F9B564 /* StationsDataProvider.swift in Sources */,
 				C9334A8420EFCE53007B6AB7 /* APIQuery.swift in Sources */,
 				C9334A8320EFCC43007B6AB7 /* Queries.swift in Sources */,
 			);
@@ -237,6 +242,7 @@
 				C9334A7020EF9EE4007B6AB7 /* APICallback.swift in Sources */,
 				C9334A6C20EF993B007B6AB7 /* APIController.swift in Sources */,
 				C9A299DE20F0B82100F9B564 /* AppCoordinator.swift in Sources */,
+				C9A299ED20F0D32E00F9B564 /* StationsDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

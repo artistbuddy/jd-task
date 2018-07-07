@@ -8,17 +8,6 @@
 
 import Foundation
 
-struct StationInfo {
-    let id: String
-    let name: String
-    let lat: Double
-    let long: Double
-    let bikes: String
-    let freeRacks: String
-    let racks: String
-    let updated: String
-}
-
 struct StationsData: Decodable {
     let stations: [StationInfo]
     
