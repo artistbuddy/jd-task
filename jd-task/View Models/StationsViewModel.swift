@@ -11,6 +11,8 @@ import UIKit
 protocol StationsViewModelProtocol {
     var collectionView: UICollectionView { get }
     var shouldActivityIndicator: ((_ show: Bool) -> Void)? { get set }
+    
+    func refreshData()
 }
 
 protocol StationsViewModelDelegate: StationsCollectionDelegate {
@@ -34,7 +36,8 @@ class StationsViewModel: StationsViewModelProtocol {
         refreshData()
     }
     
-    private func refreshData() {
+    //MARK:- StationsViewModelProtocol
+    func refreshData() {
         shouldActivityIndicator?(true)
         
         provider.download(success: { [weak self] in
@@ -45,7 +48,6 @@ class StationsViewModel: StationsViewModelProtocol {
             }, failure: nil)
     }
     
-    //MARK:- StationsViewModelProtocol
     var collectionView: UICollectionView {
         return self.controller.collectionView
     }

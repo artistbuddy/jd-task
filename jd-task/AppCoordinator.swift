@@ -37,11 +37,15 @@ class AppCoordinator {
     }
     
     func start() {
+        if Session.location.shouldRequestAuthorization() {
+            Session.location.requestAuthorization()
+        }
+        
         showAllStations()
     }
     
     private func showAllStations() {
-        let p = StationsDataProvider(apiControler: Session.api)
+        let p = StationsDataProvider(apiControler: Session.api, locationManager: Session.location)
         let vm = StationsViewModel(dataProvider: p)
         vm.delegate = self
         let vc = StationsViewController(viewModel: vm)

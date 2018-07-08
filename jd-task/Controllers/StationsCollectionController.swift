@@ -57,8 +57,8 @@ extension StationsCollectionController: UICollectionViewDataSource {
         
         cell.id = station.id
         cell.name = station.name
-        cell.distance = "?"
-        cell.address = "?"
+        cell.distance = station.distance ?? "?"
+        cell.address = station.address ?? "?"
         cell.bikes = station.bikes
         cell.freeRacks = station.freeRacks
         

@@ -10,4 +10,6 @@ import Foundation
 
 struct Session {
     static let api = APIController(baseURL: URL(string: "http://www.poznan.pl")!)
+    static let location: LocationManager = LocationController()
+    
 }

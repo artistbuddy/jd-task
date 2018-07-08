@@ -18,6 +18,8 @@ class StationInfo: NSObject {
     let freeRacks: String
     let racks: String
     let updated: String
+    var distance: String?
+    var address: String?
     
     init(id: String, name: String, lat: Double, long: Double, bikes: String, freeRacks: String, racks: String, updated: String) {
         self.id = id
@@ -53,10 +55,13 @@ class StationsDataProvider {
         
         return stations
     }
-    private let api: APIController
     
-    init(apiControler: APIController) {
+    private let api: APIController
+    private let location: LocationManager
+    
+    init(apiControler: APIController, locationManager: LocationManager) {
         self.api = apiControler
+        self.location = locationManager
     }
     
     func download(success: (() -> Void)?, failure: APIFailureCallback) {
@@ -64,6 +69,16 @@ class StationsDataProvider {
         
         api.execute(query, success: { (data) in
             self.data = data
+            
+            if let position = self.location.lastLocation {
+                let formatter = MKDistanceFormatter()
+                
+                for station in data.stations {
+                    let distance = position.distance(from: CLLocation(latitude: station.coordinate.latitude, longitude: station.coordinate.longitude))
+                    station.distance = formatter.string(fromDistance: distance)
+                }
+            }
+            
             success?()
         }, failure: failure)
     }

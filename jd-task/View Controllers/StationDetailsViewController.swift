@@ -37,8 +37,8 @@ class StationDetailsViewController: UIViewController {
         
         view.id = self.station.id
         view.name = self.station.name
-        view.distance = "?"
-        view.address = "?"
+        view.distance = self.station.distance ?? "?"
+        view.address = self.station.address ?? "?"
         view.bikes = self.station.bikes
         view.freeRacks = self.station.freeRacks
         
