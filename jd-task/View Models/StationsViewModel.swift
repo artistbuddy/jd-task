@@ -12,12 +12,22 @@ protocol StationsViewModelProtocol {
     var collectionView: UICollectionView { get }
 }
 
-class StationsViewModel: StationsViewModelProtocol {
-    private let controller: StationsCollectionController
-    private(set) var provider: StationsDataProvider
+protocol StationsViewModelDelegate: StationsCollectionDelegate {
     
-    init(controller: StationsCollectionController, dataProvider: StationsDataProvider) {
-        self.controller = controller
+}
+
+class StationsViewModel: StationsViewModelProtocol {
+    weak var delegate: StationsViewModelDelegate?
+    
+    private lazy var controller: StationsCollectionController = {
+       let controller = StationsCollectionController(dataSource: self.provider)
+        controller.delegate = self.delegate
+        
+        return controller
+    }()
+    private var provider: StationsDataProvider
+    
+    init(dataProvider: StationsDataProvider) {
         self.provider = dataProvider
         
         refreshData()

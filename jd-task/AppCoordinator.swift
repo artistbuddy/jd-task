@@ -42,10 +42,22 @@ class AppCoordinator {
     
     private func showAllStations() {
         let p = StationsDataProvider(apiControler: Session.api)
-        let c = StationsCollectionController(dataSource: p)
-        let vm  = StationsViewModel(controller: c, dataProvider: p)
+        let vm = StationsViewModel(dataProvider: p)
+        vm.delegate = self
         let vc = StationsViewController(viewModel: vm)
         
         self.navigationController.setViewControllers([vc], animated: false)
+    }
+    
+    private func showStationDetails(_ station: StationInfo) {
+        let vc = StationDetailsViewController(station: station)
+        
+        self.navigationController.pushViewController(vc, animated: true)
+    }
+}
+
+extension AppCoordinator: StationsViewModelDelegate {
+    func didSelectStation(_ station: StationInfo) {
+        showStationDetails(station)
     }
 }

@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import MapKit
 
-struct StationInfo {
+class StationInfo: NSObject {
     let id: String
     let name: String
     let lat: Double
@@ -17,6 +18,23 @@ struct StationInfo {
     let freeRacks: String
     let racks: String
     let updated: String
+    
+    init(id: String, name: String, lat: Double, long: Double, bikes: String, freeRacks: String, racks: String, updated: String) {
+        self.id = id
+        self.name = name
+        self.lat = lat
+        self.long = long
+        self.bikes = bikes
+        self.freeRacks = freeRacks
+        self.racks = racks
+        self.updated = updated
+    }
+}
+
+extension StationInfo: MKAnnotation {
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: self.lat, longitude: self.long)
+    }
 }
 
 protocol StationsDataSource {
