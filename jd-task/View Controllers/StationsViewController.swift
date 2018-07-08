@@ -9,8 +9,16 @@
 import UIKit
 
 class StationsViewController: UIViewController {
-    private let viewModel: StationsViewModelProtocol
+    private var viewModel: StationsViewModelProtocol
     private let collectionView: UICollectionView
+    
+    private lazy var activityView: UIActivityIndicatorView = {
+       let view = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        view.hidesWhenStopped = true
+        view.startAnimating()
+        
+        return view
+    }()
     
     init(viewModel: StationsViewModelProtocol) {
         self.viewModel = viewModel
@@ -27,16 +35,22 @@ class StationsViewController: UIViewController {
         super.viewDidLoad()
         
         setupViews()
+        
+        self.collectionView.isHidden = true
     }
     
     override func updateViewConstraints() {
         super.updateViewConstraints()
         
         collectionViewConstraints()
+        activityViewConstraints()
     }
     
     private func setupViews() {
+        self.view.backgroundColor = UIColor.white
+        
         setupCollectionView()
+        setupActivityView()
         
         updateViewConstraints()
     }
@@ -58,6 +72,31 @@ class StationsViewController: UIViewController {
             self.collectionView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             self.collectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            ])
+    }
+    
+    private func setupActivityView() {
+        self.activityView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(self.activityView)
+        
+        self.viewModel.shouldActivityIndicator = { [weak self] (show) in
+            if show {
+                self?.activityView.startAnimating()
+                self?.collectionView.isHidden = true
+            } else {
+                self?.activityView.stopAnimating()
+                self?.collectionView.isHidden = false
+            }           
+        }
+    }
+    
+    private func activityViewConstraints() {
+        NSLayoutConstraint.activate([
+            self.activityView.widthAnchor.constraint(equalToConstant: 40),
+            self.activityView.heightAnchor.constraint(equalToConstant: 40),
+            self.activityView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.activityView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
             ])
     }
     

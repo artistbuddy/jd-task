@@ -10,6 +10,7 @@ import UIKit
 
 protocol StationsViewModelProtocol {
     var collectionView: UICollectionView { get }
+    var shouldActivityIndicator: ((_ show: Bool) -> Void)? { get set }
 }
 
 protocol StationsViewModelDelegate: StationsCollectionDelegate {
@@ -34,16 +35,22 @@ class StationsViewModel: StationsViewModelProtocol {
     }
     
     private func refreshData() {
+        shouldActivityIndicator?(true)
+        
         provider.download(success: { [weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
-            }}, failure: nil)
+                self?.shouldActivityIndicator?(false)
+            }
+            }, failure: nil)
     }
     
     //MARK:- StationsViewModelProtocol
     var collectionView: UICollectionView {
         return self.controller.collectionView
     }
+    
+    var shouldActivityIndicator: ((_ show: Bool) -> Void)? = nil
 }
 
 
